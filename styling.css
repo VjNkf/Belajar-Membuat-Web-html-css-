@@ -1,0 +1,152 @@
+/* 1. CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* 2. SELECTOR DASAR & NAV */
+nav {
+    background: #2c3e50;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex; /* FLEXBOX */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s; /* TRANSITION */
+}
+
+nav a:hover {
+    color: #3498db; /* HOVER EFFECT */
+}
+
+/* 3. CARD & LINEAR GRADIENT */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* BOX SHADOW */
+    text-align: center;
+}
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* LINEAR GRADIENT */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 4. TRANSFORM & PROFILE IMAGE */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    transition: transform 0.5s; /* TRANSITION */
+}
+
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg); /* TRANSFORM */
+}
+
+/* 5. GRID SYSTEM */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid; /* GRID */
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* 6. FLEXBOX HOBBIES */
+.flex-hobbies {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.hobby-item {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hobby-item:hover {
+    background: #2980b9;
+}
+
+/* 7. TABLE & STYLING */
+.table-container {
+    overflow-x: auto; /* Membantu di mobile agar tidak hancur */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* 8. RESPONSIVE DESIGN (MEDIA QUERY) */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-content {
+        width: 100%;
+    }
+
+    .flex-hobbies {
+        justify-content: center;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+}
