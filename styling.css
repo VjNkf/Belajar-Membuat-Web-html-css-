@@ -8,7 +8,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f0f4f8;
+    /* elegant, subtle gradient with faint texture */
+    background: 
+        linear-gradient(135deg, #f5f7fb 0%, #eef4ff 50%, #fbfdff 100%),
+        linear-gradient(135deg, rgba(102,126,234,0.04) 0%, rgba(118,75,162,0.02) 100%),
+        radial-gradient(circle at 10% 20%, rgba(102,126,234,0.03), transparent 20%),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.015) 0 1px, transparent 1px 30px);
+    background-attachment: fixed;
+    background-blend-mode: normal, overlay, normal, overlay;
     color: #333;
     scroll-behavior: smooth;
 }
@@ -45,10 +52,13 @@ nav a:hover {
 
 /* 3. CARD & LINEAR GRADIENT */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.88);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* BOX SHADOW */
+    box-shadow: 0 12px 30px rgba(18,38,63,0.08);
+    border: 1px solid rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px) saturate(1.03);
+    -webkit-backdrop-filter: blur(6px) saturate(1.03);
     text-align: center;
 }
 
@@ -103,6 +113,102 @@ nav a:hover {
 
 .hobby-item:hover {
     background: #2980b9;
+}
+
+/* Section card: elegant gradient background with subtle pattern */
+.section-card {
+    background: 
+        repeating-linear-gradient(45deg, 
+            transparent 0px, 
+            transparent 2px, 
+            rgba(102,126,234,0.03) 2px, 
+            rgba(102,126,234,0.03) 4px),
+        linear-gradient(135deg, 
+            rgba(245,247,251,0.95) 0%, 
+            rgba(239,244,255,0.92) 50%, 
+            rgba(251,253,255,0.95) 100%),
+        linear-gradient(135deg, 
+            rgba(102,126,234,0.06) 0%, 
+            rgba(118,75,162,0.03) 100%);
+    background-blend-mode: overlay, normal, normal;
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(102,126,234,0.15);
+    box-shadow: 0 12px 28px rgba(18,38,63,0.08), 
+                inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.section-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.section-card h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 48px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.quick-list {
+    list-style: none;
+    margin-top: 10px;
+    display: grid;
+    gap: 6px;
+    color: rgba(26,58,82,0.75);
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(90deg,#667eea,#764ba2);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(118,75,162,0.12);
+}
+
+/* make hobby pills subtler on the new background */
+.hobby-item {
+    background: rgba(52,152,219,0.12);
+    color: #103049;
+    padding: 10px 18px;
+    border-radius: 18px;
+    font-weight: 700;
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+.hobby-item:hover {
+    background: rgba(52,152,219,0.22);
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* table transparency and subtle borders */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+th {
+    background-color: rgba(44,62,80,0.85);
+    color: #fff;
 }
 
 /* 7. TABLE & STYLING */
@@ -163,19 +269,165 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     color: #2c3e50;
-    font-size: 1.2rem;
     text-decoration: none;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.18s ease;
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social-icon:focus {
     background: #3498db;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.06);
+}
+
+/* SVG sizing inside the circular button */
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.social-icon:focus {
+    outline: 3px solid rgba(52,152,219,0.18);
+    outline-offset: 3px;
+}
+
+/* 9. TIMELINE EDUCATION */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 32px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(102,126,234,0.4) 0%, rgba(118,75,162,0.2) 100%);
+    border-radius: 3px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 24px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 12px;
+    top: 2px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.08));
+    border: 2px solid rgba(102,126,234,0.3);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.timeline-item.active .timeline-icon {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    box-shadow: 0 6px 18px rgba(102,126,234,0.25);
+    transform: scale(1.15);
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.08);
+}
+
+.timeline-content {
+    background: rgba(255,255,255,0.5);
+    padding: 16px 18px;
+    border-radius: 10px;
+    border-left: 3px solid rgba(102,126,234,0.4);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.08);
+}
+
+.timeline-item.active .timeline-content {
+    background: rgba(102,126,234,0.15);
+    border-left-color: #667eea;
+    box-shadow: 0 6px 16px rgba(102,126,234,0.15);
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(102,126,234,0.2);
+    box-shadow: 0 6px 16px rgba(102,126,234,0.12);
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: #1a3a52;
+}
+
+.timeline-year {
+    font-size: 0.85rem;
+    color: rgba(26,58,82,0.7);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: rgba(26,58,82,0.75);
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.15));
+    color: #103049;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* responsive timeline */
+@media (max-width: 600px) {
+    .timeline::before {
+        left: 18px;
+    }
+    
+    .timeline-item {
+        padding-left: 70px;
+    }
+    
+    .timeline-icon {
+        left: -3px;
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        padding: 12px 14px;
+    }
 }

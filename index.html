@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Vincentius Januario Naikofi</title>
+    <title>Web Saya</title>
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
@@ -31,66 +31,82 @@
 
     <main class="container">
         <section id="about" class="grid-section">
-            <div class="card">
+            <div class="card section-card">
                 <h2>Tentang Saya</h2>
-                <p>Perkenalkan, nama Saya <b>Vincentius Januario Naikofi</b>. Mahasiswa Informatika di <i>Universitas Sanata Dharma Yogyakarta</i>.</p>
-                <p>Kini Saya sedang nelajar Web Development, jadi yang ada di tampilan ini adalah web pertama Saya. Saya yakin dengan mempelajari HTML dan teknologi web lainnya, saya dapat membuka peluang karir di bidang IT.</p>
-                <a href="https://github.com/VjNkf" target="_blank" class="btn-github">Klik di sini untuk mengunjungi GitHub Saya</a>
+                <p>Perkenalkan, nama Saya <b>Vincentius Januario Naikofi</b> kelahiran 22 Januari 2003. Mahasiswa Informatika di <i>Universitas Sanata Dharma Yogyakarta</i>.</p>
+                <p>Saat ini saya fokus mempelajari <strong>Web Development</strong> — HTML, CSS, dan JavaScript. Sekarang Saya sementara belajar membuat Web sederhana dengan memakai html dan css.</p>
+                <ul class="quick-list">
+                    <li>🔭 Frontend basics: HTML & CSS</li>
+                    <li>💡 Ingin belajar React & UX</li>
+                    <li>📂 Web Project</li>
+                </ul>
+                <div style="margin-top:12px;">
+                    <a href="https://github.com/VjNkf" target="_blank" class="btn-github">GitHub Saya</a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn-contact">Hubungi</a>
+                </div>
             </div>
         </section>
 
         <section id="hobi">
-            <h2>Hobi Saya</h2>
-            <div class="flex-hobbies">
-                <div class="hobby-item">🎸 Musik</div>
-                <div class="hobby-item">🎮 Gaming</div>
-                <div class="hobby-item">📚 Membaca</div>
+            <div class="card section-card">
+                <h2>Hobi Saya</h2>
+                <div class="flex-hobbies">
+                    <div class="hobby-item">🎸 Musik</div>
+                    <div class="hobby-item">🎮 Gaming</div>
+                    <div class="hobby-item">📚 Membaca</div>
+                </div>
             </div>
         </section>
 
         <section id="pendidikan">
-            <h2>Riwayat Pendidikan</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tahun</th>
-                            <th>Institusi</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2009 - 2015</td>
-                            <td>SDN Koko Kefamenanu</td>
-                            <td>Lulus dengan Baik</td>
-                        </tr>
-                        <tr>
-                            <td>2018 - 2022</td>
-                            <td>SMAS Seminari Lalian</td>
-                            <td>Lulus dengan Baik</td>
-                        </tr>
-                        <tr>
-                            <td>2024 - Sekrg</td>
-                            <td>Univ. Sanata Dharma</td>
-                            <td>Semester 4 - Informatika</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card section-card">
+                <h2>Riwayat Pendidikan</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📚</div>
+                        <div class="timeline-content">
+                            <h3>SDN Koko Kefamenanu</h3>
+                            <p class="timeline-year">2009 - 2015</p>
+                            <p class="timeline-desc">Lulus dengan Baik</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🎓</div>
+                        <div class="timeline-content">
+                            <h3>SMAS Seminari Lalian</h3>
+                            <p class="timeline-year">2018 - 2022</p>
+                            <p class="timeline-desc">Lulus dengan Baik</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item active">
+                        <div class="timeline-icon">🎯</div>
+                        <div class="timeline-content">
+                            <h3>Univ. Sanata Dharma</h3>
+                            <p class="timeline-year">2024 - Sekarang</p>
+                            <span class="badge">Semester 4 - Informatika</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026_Vincentius Januario.</p>
-        <!-- social links (icon buttons) -->
+        <!-- social links (SVG icons) -->
         <div class="social-links">
             <!-- replace "yourusername" and number with your actual details -->
-            <a href="https://instagram.com/yourusername" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                📸
+            <a href="https://instagram.com/vj_nkf" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <!-- Instagram SVG (fills with currentColor) -->
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.5A4.5 4.5 0 1016.5 13 4.5 4.5 0 0012 8.5zM18.5 6a1 1 0 11-1-1 1 1 0 011 1z" />
+                </svg>
             </a>
-            <a href="https://wa.me/1234567890" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                💬
+            <a href="https://wa.me/087740152315" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <!-- WhatsApp SVG (fills with currentColor) -->
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M20.5 3.5A11 11 0 0012 1a11 11 0 00-8 3.5C1.5 9 3 14 7 17l-1 4 4-1c3 2 8 1.5 11-2.5A11 11 0 0020.5 3.5zM12 18a6 6 0 01-3.4-1l-.2-.1-2.4.6.6-2.3-.1-.2A6 6 0 1112 18zm2.9-3.9c-.2-.1-1.2-.6-1.4-.6s-.4 0-.6.6-.7.7-1.4.5-1-.8-1.3-1.1-.7-1.2-.3-1.5 1.2-.3 1.6-.3.5-.1.7-.4.2-.5.1-.7c-.1-.2-.6-.6-1-.9-.8-.6-.8-.9-.5-1.2.3-.3.7-.3 1.1-.3s.7.1 1 .4c.3.3.8.8.9 1.1s.3.7.6.8.8.2 1 .2.6-.1.9.3.6.8.5 1.5-.5 1-1 1.2z" />
+                </svg>
             </a>
         </div>
     </footer>
