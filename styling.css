@@ -8,21 +8,20 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    /* elegant, subtle gradient with faint texture */
+    /* calm, elegant neutral background */
     background: 
-        linear-gradient(135deg, #f5f7fb 0%, #eef4ff 50%, #fbfdff 100%),
-        linear-gradient(135deg, rgba(102,126,234,0.04) 0%, rgba(118,75,162,0.02) 100%),
-        radial-gradient(circle at 10% 20%, rgba(102,126,234,0.03), transparent 20%),
-        repeating-linear-gradient(45deg, rgba(0,0,0,0.015) 0 1px, transparent 1px 30px);
+        linear-gradient(135deg, var(--avg-color, #fafafa) 0%, #f5f5f5 50%, var(--avg-color, #fafafa) 100%),
+        radial-gradient(circle at 20% 30%, rgba(250,250,250,0.6), transparent 40%),
+        repeating-linear-gradient(60deg, rgba(0,0,0,0.01) 0 1px, transparent 1px 40px);
     background-attachment: fixed;
-    background-blend-mode: normal, overlay, normal, overlay;
+    background-blend-mode: normal, overlay, overlay;
     color: #333;
     scroll-behavior: smooth;
 }
 
 /* 2. SELECTOR DASAR & NAV */
 nav {
-    background: #2c3e50;
+    background: #0c2742;
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -47,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #3498db; /* HOVER EFFECT */
+    color: #14b8a6; /* HOVER EFFECT */
 }
 
 /* 3. CARD & LINEAR GRADIENT */
@@ -63,7 +62,8 @@ nav a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* LINEAR GRADIENT */
+    /* gentler header using average profile color with soft fade */
+    background: linear-gradient(135deg, var(--avg-color, #eef2f6) 0%, rgba(250,250,250,0.5) 60%);
     padding: 60px 20px;
     display: flex;
     justify-content: center;
@@ -102,7 +102,7 @@ nav a:hover {
 }
 
 .hobby-item {
-    background: #3498db;
+    background: #14b8a6;
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
@@ -112,7 +112,7 @@ nav a:hover {
 }
 
 .hobby-item:hover {
-    background: #2980b9;
+    background: #64748b;
 }
 
 /* Section card: elegant gradient background with subtle pattern */
@@ -121,19 +121,19 @@ nav a:hover {
         repeating-linear-gradient(45deg, 
             transparent 0px, 
             transparent 2px, 
-            rgba(102,126,234,0.03) 2px, 
-            rgba(102,126,234,0.03) 4px),
+            rgba(100,116,139,0.03) 2px, 
+            rgba(100,116,139,0.03) 4px),
         linear-gradient(135deg, 
-            rgba(245,247,251,0.95) 0%, 
-            rgba(239,244,255,0.92) 50%, 
-            rgba(251,253,255,0.95) 100%),
+            rgba(240,253,244,0.95) 0%, 
+            rgba(236,253,245,0.92) 50%, 
+            rgba(240,253,250,0.95) 100%),
         linear-gradient(135deg, 
-            rgba(102,126,234,0.06) 0%, 
-            rgba(118,75,162,0.03) 100%);
+            rgba(100,116,139,0.06) 0%, 
+            rgba(249,115,22,0.03) 100%);
     background-blend-mode: overlay, normal, normal;
     padding: 1.8rem;
     border-radius: 12px;
-    border: 1px solid rgba(102,126,234,0.15);
+    border: 1px solid rgba(100,116,139,0.15);
     box-shadow: 0 12px 28px rgba(18,38,63,0.08), 
                 inset 0 1px 0 rgba(255,255,255,0.5);
 }
@@ -144,6 +144,7 @@ nav a:hover {
     display: inline-block;
     position: relative;
     padding-bottom: 6px;
+    color: #1a3a52;
 }
 
 .section-card h2::after {
@@ -154,7 +155,12 @@ nav a:hover {
     height: 3px;
     width: 48px;
     border-radius: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #64748b, #fda4af);
+}
+
+.section-card p {
+    color: rgba(26,58,82,0.8);
+    font-weight: 500;
 }
 
 .quick-list {
@@ -169,26 +175,29 @@ nav a:hover {
     display: inline-block;
     margin-left: 10px;
     padding: 8px 12px;
-    background: linear-gradient(90deg,#667eea,#764ba2);
-    color: #fff;
+    background: linear-gradient(90deg, #64748b, #a8a4fd);
+    color: #92c1b2;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 6px 14px rgba(118,75,162,0.12);
+    box-shadow: 0 6px 14px rgba(26,58,82,0.1);
 }
 
-/* make hobby pills subtler on the new background */
+/* make hobby pills attractive with new background */
 .hobby-item {
-    background: rgba(52,152,219,0.12);
+    background: linear-gradient(135deg, rgba(100,116,139,0.2), rgba(253,164,175,0.15));
     color: #103049;
     padding: 10px 18px;
     border-radius: 18px;
     font-weight: 700;
-    transition: transform 0.18s ease, background 0.18s ease;
+    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+    border: 1px solid rgba(52,152,219,0.2);
 }
 .hobby-item:hover {
-    background: rgba(52,152,219,0.22);
+    background: linear-gradient(135deg, rgba(100,116,139,0.35), rgba(253,164,175,0.28));
     transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 14px rgba(52,152,219,0.18);
 }
 
 /* table transparency and subtle borders */
@@ -254,7 +263,7 @@ th {
 footer {
     text-align: center;
     padding: 40px;
-    color: #7f8c8d;
+    color: #475569; /* darker slate for legibility */
 }
 
 /* social links */
@@ -281,7 +290,7 @@ footer {
 
 .social-icon:hover,
 .social-icon:focus {
-    background: #3498db;
+    background: #1e655d;
     color: #fff;
     transform: scale(1.06);
 }
@@ -294,7 +303,7 @@ footer {
 }
 
 .social-icon:focus {
-    outline: 3px solid rgba(52,152,219,0.18);
+    outline: 3px solid rgba(100,116,139,0.18);
     outline-offset: 3px;
 }
 
@@ -311,7 +320,7 @@ footer {
     left: 32px;
     width: 3px;
     height: 100%;
-    background: linear-gradient(180deg, rgba(102,126,234,0.4) 0%, rgba(118,75,162,0.2) 100%);
+    background: linear-gradient(180deg, rgba(100,116,139,0.4) 0%, rgba(249,115,22,0.2) 100%);
     border-radius: 3px;
 }
 
@@ -341,8 +350,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.08));
-    border: 2px solid rgba(102,126,234,0.3);
+    background: linear-gradient(135deg, rgba(100,116,139,0.15), rgba(110,231,183,0.08));
+    border: 2px solid rgba(100,116,139,0.3);
     border-radius: 50%;
     font-size: 1.2rem;
     z-index: 10;
@@ -350,9 +359,9 @@ footer {
 }
 
 .timeline-item.active .timeline-icon {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-color: #667eea;
-    box-shadow: 0 6px 18px rgba(102,126,234,0.25);
+    background: linear-gradient(135deg, #64748b, #6f7ab2);
+    border-color: #64748b;
+    box-shadow: 0 6px 18px rgba(100,116,139,0.25);
     transform: scale(1.15);
 }
 
@@ -364,20 +373,20 @@ footer {
     background: rgba(255,255,255,0.5);
     padding: 16px 18px;
     border-radius: 10px;
-    border-left: 3px solid rgba(102,126,234,0.4);
+    border-left: 3px solid rgba(100,116,139,0.3);
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(102,126,234,0.08);
 }
 
 .timeline-item.active .timeline-content {
-    background: rgba(102,126,234,0.15);
-    border-left-color: #667eea;
-    box-shadow: 0 6px 16px rgba(102,126,234,0.15);
+    background: rgba(100,116,139,0.15);
+    border-left-color: #14b8a6;
+    box-shadow: 0 6px 16px rgba(100,116,139,0.15);
 }
 
 .timeline-item:hover .timeline-content {
-    background: rgba(102,126,234,0.2);
-    box-shadow: 0 6px 16px rgba(102,126,234,0.12);
+    background: rgba(100,116,139,0.2);
+    box-shadow: 0 6px 16px rgba(100,116,139,0.12);
 }
 
 .timeline-content h3 {
@@ -401,7 +410,7 @@ footer {
 
 .badge {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.15));
+    background: linear-gradient(135deg, rgba(100,116,139,0.2), rgba(253,164,175,0.15));
     color: #103049;
     padding: 4px 10px;
     border-radius: 12px;
